@@ -4,6 +4,7 @@ import gym
 import numpy as np
 import sys
 from collections import defaultdict
+from gym.version import VERSION as gym_version
 
 from mc import *
 
@@ -20,6 +21,7 @@ env = gym.make('Blackjack-v1',new_step_api=True)
 def test_python_version():
     '''------On-policy Monte Carlo(50 points in total)------'''
     assert sys.version_info[0] == 3  # require python 3
+    assert gym_version == "0.25.2"
 
 #---------------------------------------------------------------
 
@@ -45,16 +47,22 @@ def test_mc_prediction():
     boundaries2 = [(18, 4, True), (18, 6, True), (18, 8, True)]
     boundaries3 = [(20, 4, False), (20, 6, False), (20, 8, False), (20, 4, True), (20, 6, True), (20, 8, True)]
 
+    print(len(V_500k))
     assert len(V_500k) == 280
+    print("boundaries1")
     for b in boundaries1:
+        print(V_500k[b])
         assert np.allclose(V_500k[b], -0.7, atol=0.05)
+    print("boundaries2")
     for b in boundaries2:
+        print(V_500k[b])
         assert np.allclose(V_500k[b], -0.4, atol=0.1)
+    print("boundaries3")
     for b in boundaries3:
+        print(V_500k[b])
         assert V_500k[b] > 0.6
 
 #---------------------------------------------------------------
-
 
 def test_epsilon_greedy():
     '''epsilon_greedy (8 points)'''
@@ -66,9 +74,10 @@ def test_epsilon_greedy():
         action = epsilon_greedy(Q, state, 4, epsilon=0.1)
         actions.append(action)
 
+    print(1 - np.count_nonzero(actions) / 10000)
     assert np.allclose(1 - np.count_nonzero(actions) / 10000, 0.925, atol=0.02)
 
-#---------------------------------------------------------------
+# #---------------------------------------------------------------
 
 
 def test_mc_control_epsilon_greedy():
@@ -85,6 +94,7 @@ def test_mc_control_epsilon_greedy():
         if [policy[key] for key in boundaries_key] == boundaries_action:
             count += 1
 
-    print(count)
+    print("Count: ", count)
+    print("Length: ", len(Q_500k))
     assert len(Q_500k) == 280
     assert count >= 1

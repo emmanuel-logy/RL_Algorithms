@@ -27,12 +27,13 @@ nA2 = env2.action_space.n
 
 #---------------------------------------------------------------
 def test_python_version():
-    '''------Dynamic Programming for MDP (100 points in total)------'''
+    """------Dynamic Programming for MDP (100 points in total)------"""
     assert sys.version_info[0] == 3 # require python 3
+
 
 #---------------------------------------------------------------
 def test_policy_evaluation():
-    '''policy_evaluation (20 points)'''
+    """policy_evaluation (20 points)"""
     random_policy1 = np.ones([nS, nA]) / nA
     V1 = policy_evaluation(env.P, nS, nA, random_policy1,tol=1e-8)
     test_v1 = np.array([0.004, 0.004, 0.01 , 0.004, 0.007, 0. , 0.026, 0. , 0.019,
@@ -47,11 +48,11 @@ def test_policy_evaluation():
 
     assert np.allclose(test_v1,V1,atol=1e-3)
     assert np.allclose(test_v2,V2,atol=1e-3)
-    
+
 
 #---------------------------------------------------------------
 def test_policy_improvement():
-    '''policy_improvement (20 points)'''
+    """policy_improvement (20 points)"""
     np.random.seed(595)
     V1 = np.random.rand(nS)
     new_policy1 = policy_improvement(env.P, nS, nA, V1)
@@ -90,14 +91,14 @@ def test_policy_improvement():
        [1., 0., 0., 0.],
        [0., 1., 0., 0.],
        [1., 0., 0., 0.]])
-    
+
     assert np.allclose(test_policy1,new_policy1)
     assert np.allclose(test_policy2,new_policy2)
 
-    
-#---------------------------------------------------------------
+
+# #---------------------------------------------------------------
 def test_policy_iteration():
-    '''policy_iteration (20 points)'''
+    """policy_iteration (20 points)"""
     random_policy1 = np.ones([nS, nA]) / nA
 
     np.random.seed(595)
@@ -147,7 +148,6 @@ def test_policy_iteration():
     optimal_V2 = np.array([0.59 , 0.656, 0.729, 0.656, 0.656, 0. , 0.81 , 0. , 0.729,
        0.81 , 0.9  , 0. , 0. , 0.9 , 1. , 0. ])
 
-
     assert np.allclose(policy_pi1,optimal_policy)
     assert np.allclose(V_pi1,optimal_V,atol=1e-3)
     assert np.allclose(policy_pi2,optimal_policy)
@@ -156,9 +156,9 @@ def test_policy_iteration():
     assert np.allclose(V_pi3,optimal_V2,atol=1e-3)
 
 
-#---------------------------------------------------------------
+# #---------------------------------------------------------------
 def test_value_iteration():
-    '''value_iteration (20 points)'''
+    """value_iteration (20 points)"""
     np.random.seed(10000)
     V1 = np.random.rand(nS)
     policy_vi1, V_vi1 = value_iteration(env.P, nS, nA, V1, tol= 1e-8)
@@ -206,7 +206,6 @@ def test_value_iteration():
     optimal_V2 = np.array([0.59 , 0.656, 0.729, 0.656, 0.656, 0. , 0.81 , 0. , 0.729,
        0.81 , 0.9  , 0. , 0. , 0.9 , 1. , 0. ])
 
-    
     assert np.allclose(policy_vi1,optimal_policy)
     assert np.allclose(V_vi1,optimal_V,atol=1e-3)
     assert np.allclose(policy_vi2,optimal_policy)
@@ -214,21 +213,20 @@ def test_value_iteration():
     assert np.allclose(policy_vi3,optimal_policy2)
     assert np.allclose(V_vi3,optimal_V2,atol=1e-3)
 
-#---------------------------------------------------------------            
+# #---------------------------------------------------------------
 def test_render_single():
-    '''render_single (20 points)'''                 
+    """render_single (20 points)"""
     print("\n" + "-"*25 + "\nBeginning Policy Iteration\n" + "-"*25)
     random_policy = np.ones([nS, nA]) / nA
     p_pi, V_pi = policy_iteration(env.P, nS, nA, random_policy,tol=1e-8)
     r_pi = render_single(env, p_pi, False, 50)
     print("total rewards of PI: ",r_pi)
-    
+
     print("\n" + "-"*25 + "\nBeginning Value Iteration\n" + "-"*25)
     V = np.zeros(nS)
     p_vi, V_vi = value_iteration(env.P, nS, nA, V,tol=1e-8)
     r_vi = render_single(env, p_vi, False, 50)
     print("total rewards of VI: ",r_vi)
-    
-    
+
     assert r_pi > 30
     assert r_vi > 30

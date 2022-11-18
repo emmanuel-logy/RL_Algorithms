@@ -5,6 +5,7 @@ import numpy as np
 import sys
 from collections import defaultdict
 from collections import Counter
+from gym.version import VERSION as gym_version
 
 from td import *
 """
@@ -21,6 +22,7 @@ def test_python_version():
     '''------Temporal Difference(50 points in total)------'''
 
     assert sys.version_info[0] == 3  # require python 3
+    assert gym_version == "0.25.2"
 
 #---------------------------------------------------------------
 
@@ -49,6 +51,7 @@ def test_sarsa():
                             [0, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, 0]])
     # note: we do not have cliff state in Q_s if using Sarsa
     Q_s = sarsa(env, n_episodes=50000, gamma=1.0, alpha=0.01, epsilon=0.1)
+    # print("Q_s:\n", Q_s)
     policy_q = np.array([np.argmax(Q_s[key]) if key in Q_s else -1 for key
                          in np.arange(48)]).reshape((4, 12))
     print(policy_q)
