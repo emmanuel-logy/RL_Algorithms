@@ -1,3 +1,17 @@
+# My Results
+
+Please find my results here: 
+[Emmanuel_Project3_Report.pdf](./Emmanuel_Project3_Report.pdf)
+
+<div style="page-break-after: always;"></div>
+
+
+
+
+
+
+
+
 # Inidividual Project 3
 # Deep Q-learning Network(DQN)
 Please don't revise test.py, environment.py main.py and agent.py
@@ -16,33 +30,6 @@ You can also optionally updated atari_wrapper.py (if needed, but not recommended
 
 #### Total Points
 * 100 (One Hundred)
-
-## Leaderboard and Bonus Points
-In this project, we will provide a leaderboard and give **10** bonus points to the **top 3** highest reward students! 
-* Where to see the leaderboard 
-  * We will create a discussion on Canvas and each of you can post your highest reward with a sreenshot. TA will summarize your posts and list the top 3 highest rewards and post it below. <br>
-  * The leaderboards of previous years are also posted at the end of this page, you can check it out.
-  
-  **Leaderboard for Breakout-DQN** 
-  **Update Date: **
-  
-  | Top | Date | Name | Score | Model |
-  | :---: | :---:| :---: | :---: | :---: |
-  | 1  | 10/24/2022 | Palawat Busaranuvong | 317 | Prioritized DQN |
-  | 2  | 11/15/2022 | Rane, Bhushan | 166.8 | ... |
-  | 3  | 11/06/2022 | Yiwei Jiang | 96.45 | DDQN |
-  | 4  | 11/14/2022 | Samarth Shah | 85.39 | DDQN with Prioritized Replay |
-  | 5  | 11/14/2022 | Aadesh Varude | 71.65 | Vanilla DQN |
-  | 6  | 11/07/2022 | Brown, Galen | 69.01 | Basic DQP with reward shaping |
-  | 7  | 11/5/2022  | Ryan Killea | 67.12 | ... |
-  | 8  | 11/14/2022  | Rushabh Kheni | 65.51 | Vanilla DQN with Deepmind architecture |  
-  | 9  | 10/30/2022 | Jack Ayvazian | 47.49 | Double DQN, DeepMind Architecture |  
-
-* How to elvaluate
-  * You should submit your lastest trained model and python code. TA will run your code to make sure the result is consistent with your screenshot. 
-* How to grade
-  * Top 3 students on the leaderboard can get 10 bonus points for project 3.
-  
 
 ## Installation
 Type the following command to install OpenAI Gym Atari environment in your **virutal environment**.
@@ -115,47 +102,3 @@ Please compress all the below files into a zipped file and submit the zip file (
   * Use your own GPU
   * Apply [Ace account](https://arc.wpi.edu/computing/accounts/) or[Turing account](https://arc.wpi.edu/computing/accounts/) from WPI 
   
-## Leaderboard for Fall 2019** 
-  
-  | Top | Date | Name | Score |
-  | :---: | :---:| :---: | :---: |
-  | **1**   |10/22/2019| **Prathyush SP**          |  **142.77**    | 
-  |         |10/18/2019| Prathyush SP          |  81.07     | 
-  | **2**   |10/28/2019| **Sapan Agrawal**         |   **91.34**    |
-  | 3   |11/1/2019| Hanshen Yu| 86.82 |
-  | **4**   |10/31/2019| **Mohamed Mahdi Alouane** | **80.24**     | 
-  | 5   |10/26/2019| Vamshi Krishna Uppununthala|  79.5   | 
-  | 6   |10/31/2019| Sai Vineeth K V | 66.5 | 
-  | 7   |11/14/2019| Cory neville | 59.96 | 
-  | 8   |10/24/2019|Shreesha Narasimha Murthy  |56.79     | 
-  | 9   |10/20/2019|Sinan Morcel            |53.26        |
-  
-## Leaderboard for Fall 2020** 
-
-  | Top | Date | Name | Score |
-  | :---: | :---:| :---: | :---: | 
-  | 1  | 11/19/2020|Abhishek Jain  | 424.21  |
-  | 2  | 11/19/2020|Akshay Sadanandan  | 403  |
-  | 3  | 11/19/2020|Dhirajsinh Deshmukh  | 393.37  |
-  |4 |11/19/2020 |   Daniel Jeswin Nallathambi      | 335.26  |
-  | 5  | 11/18/2020|Sayali Shelke  | 334  |
-  |6 | 11/19/2020|Varun Eranki  | 298  |
-  | 7  | 11/5/2020|Apiwat Ditthapron  | 194.5  | 
-  |8 | 11/18/2020|Panagiotis Argyrakis  | 156.09  |
-  |9 | 11/20/2020|Scott Tang  | 153.89  |
-  |10 | 11/18/2020|Xinyuan Yang  | 139.11  |
-  
-## Leaderboard for Spring 2022**
-  
-  | Top | Date | Name | Score |
-  | :---: | :---:| :---: | :---: | 
-  | 1  |4/6/2022 | Hongchao Zhang | 128 |
-  | 2  |4/13/2022 | Apratim Mukherjee| 112 |
-  | 3  | 4/6/2022 |  Puru Upadhyay | 82 |
-  | 4  | 4/6/2022 |  Khai Yi Chin | 81 |
-  | 4  | 4/6/2022 |  Karter Krueger | 81 |
-  | 6  | 4/6/2022 |  Sailesh Rajagopalan | 78 |
-  | 6  |4/6/2022 | Steven Hyland | 78 |
-  | 8  |4/6/2022 | Yiran Fang | 74 |
-  | 9  |4/6/2022 | Zhentian Qian | 67 |
-  | 10  |4/6/2022 | Anujay Sharma | 66 |
